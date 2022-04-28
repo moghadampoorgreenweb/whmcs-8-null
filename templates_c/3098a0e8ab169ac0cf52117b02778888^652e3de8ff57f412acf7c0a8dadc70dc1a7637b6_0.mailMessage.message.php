@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2022-04-25 06:56:49
+/* Smarty version 3.1.36, created on 2022-04-27 09:16:40
   from 'mailMessage:message' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_62662a11c68a45_17313324',
+  'unifunc' => 'content_6268edd86e90a8_07243626',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '652e3de8ff57f412acf7c0a8dadc70dc1a7637b6' => 
     array (
       0 => 'mailMessage:message',
-      1 => 1650862609,
+      1 => 1651043800,
       2 => 'mailMessage',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62662a11c68a45_17313324 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6268edd86e90a8_07243626 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -63,9 +63,23 @@ function content_62662a11c68a45_17313324 (Smarty_Internal_Template $_smarty_tpl)
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
                                         <tr>
                                             <td valign="top" class="bodyContent">
-<!-- message header end --><p>Thank you for choosing us</p><p>Your custom is appreciated</p><p><?php echo $_smarty_tpl->tpl_vars['custommerge']->value;?>
-<br /><?php echo $_smarty_tpl->tpl_vars['custommerge2']->value;?>
-</p><!-- message footer start -->
+<!-- message header end --><p>
+<?php echo $_smarty_tpl->tpl_vars['ticket_message']->value;?>
+
+</p>
+<p>
+----------------------------------------------<br />
+Ticket ID: #<?php echo $_smarty_tpl->tpl_vars['ticket_id']->value;?>
+<br />
+Subject: <?php echo $_smarty_tpl->tpl_vars['ticket_subject']->value;?>
+<br />
+Status: <?php echo $_smarty_tpl->tpl_vars['ticket_status']->value;?>
+<br />
+Ticket URL: <?php echo $_smarty_tpl->tpl_vars['ticket_link']->value;?>
+<br />
+----------------------------------------------
+</p>
+<!-- message footer start -->
 </td>
                                         </tr>
                                     </table>

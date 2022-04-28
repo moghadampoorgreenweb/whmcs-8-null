@@ -3,8 +3,30 @@
 use Carbon\Carbon;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
+use WHMCS\View\Menu\Item as MenuItem;
 
 include __DIR__."/vendor/autoload.php";
+
+
+
+
+
+add_hook('ClientAreaPrimaryNavbar', 1, function (MenuItem $primaryNavbar)
+{
+    $primaryNavbar->addChild('Virtual Server')
+        ->setUri('http://localhost/whm/index.php?m=order_vm')
+        ->setOrder(70);
+});
+
+add_hook('TicketOpen', 1, function($vars) {
+
+ file_put_contents(__DIR__.'/t.txt',json_encode($vars),FILE_APPEND);
+
+
+});
+
+
+
 
 
 add_hook('UserLogin', 1, function ($vars) {
@@ -22,8 +44,6 @@ add_hook('UserLogin', 1, function ($vars) {
 
       //      file_put_contents(__DIR__.'/text.json',json_encode($results['customfields1']),FILE_APPEND);
         }
-
-
 
 });
 

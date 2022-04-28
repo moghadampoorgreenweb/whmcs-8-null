@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2022-04-14 10:01:03
+/* Smarty version 3.1.36, created on 2022-04-27 08:48:49
   from 'mailMessage:plaintext' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_6257d4bf38c4c8_33176058',
+  'unifunc' => 'content_6268e751cc9cb3_72799843',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dac51ccee8dbecedf9afb805fb153d5c6bf41d7a' => 
     array (
       0 => 'mailMessage:plaintext',
-      1 => 1649923263,
+      1 => 1651042129,
       2 => 'mailMessage',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6257d4bf38c4c8_33176058 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6268e751cc9cb3_72799843 (Smarty_Internal_Template $_smarty_tpl) {
 ?>Dear <?php echo $_smarty_tpl->tpl_vars['client_name']->value;?>
 , 
 

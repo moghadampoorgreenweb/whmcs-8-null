@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2022-04-14 10:01:08
+/* Smarty version 3.1.36, created on 2022-04-27 08:48:54
   from 'mailMessage:plaintext' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_6257d4c48dfa43_31170383',
+  'unifunc' => 'content_6268e756d12fb2_46717359',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dac51ccee8dbecedf9afb805fb153d5c6bf41d7a' => 
     array (
       0 => 'mailMessage:plaintext',
-      1 => 1649923268,
+      1 => 1651042134,
       2 => 'mailMessage',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6257d4c48dfa43_31170383 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6268e756d12fb2_46717359 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('displayTotalToday', 'true');?>
 Order Information
 

@@ -232,7 +232,12 @@
                     </tr>
                     <tr>
                         <td>{$_ADMINLANG.fields.signupdate}</td>
-                        <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',strtotime($signupdate))}</td>
+                        <td>
+                            {if $signupdate  eq '0000/00/00' } {$signupdate}
+                            {else}
+                                {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',strtotime($signupdate))}
+                            {/if}
+                          </td>
                     </tr>
                     <tr class="altrow">
                         <td>{$_ADMINLANG.clientsummary.clientfor}</td>
@@ -359,7 +364,11 @@
                     {foreach key=num from=$lastfivemail item=email}
                         <tr class="{cycle values=",altrow"}">
                             <td align="center">
-                                {Morilog\Jalali\CalendarUtils::strftime('Y-m-d', $email.date)} - <a
+                                {if $email.date  eq '0000/00/00' } {$email.date}
+                                {else}
+                                    {Morilog\Jalali\CalendarUtils::strftime('Y-m-d', $email.date)}
+                                {/if}
+                               - <a
                                         href="clientsemails.php?&displaymessage=true&id={$email.id}" class="open-modal"
                                         data-modal-title="{lang key='emails.viewemailmessage'|escape}">
                                     {$email.subject}
@@ -516,8 +525,15 @@
                                                 href="{$product.domainLink}" target="_blank">{$product.domain}</a></td>
                                     <td>{$product.amount}</td>
                                     <td>{$product.dbillingcycle}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$product.regdate)}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$product.nextduedate)}</td>
+                                    <td>
+                                        {if $product.regdate  eq '0000/00/00' } {$product.regdate}
+                                        {else}
+                                            {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$product.regdate)}
+                                        {/if}
+                                       </td>
+                                    <td>
+                                        {$product.nextduedate}
+                                      </td>
                                     <td class="status"
                                         data-filter-value="{$product.domainoriginalstatus}">{$product.domainstatus}</td>
                                     <td>
@@ -570,8 +586,18 @@
                                                                    target="_blank">{$addon.domain}</a></td>
                                     <td>{$addon.amount}</td>
                                     <td>{$addon.dbillingcycle}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$addon.regdate)}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$addon.nextduedate)}</td>
+                                    <td>
+                                        {if $addon.regdate  eq '0000/00/00' } {$addon.regdate}
+                                        {else}
+                                            {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$addon.regdate)}
+                                        {/if}
+                                    </td>
+                                    <td>
+                                        {if $addon.nextduedate  eq '0000/00/00' } {$addon.nextduedate}
+                                        {else}
+                                            {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$addon.nextduedate)}
+                                        {/if}
+                                       </td>
                                     <td class="status" data-filter-value="{$addon.originalstatus}">{$addon.status}</td>
                                     <td>
                                         <a href="clientsservices.php?userid={$clientsdetails.userid}&id={$addon.serviceid}&aid={$addon.id}"><img
@@ -622,9 +648,20 @@
                                                                                       target="_blank">{$domain.domain}</a>
                                     </td>
                                     <td>{$domain.registrar}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$domain.registrationdate)}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$domain.nextduedate)}</td>
                                     <td>
+                                        {if $domain.registrationdate  eq '0000/00/00' } {$domain.registrationdate}
+                                        {else}
+                                            {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$domain.registrationdate)}
+                                        {/if}
+                                      </td>
+                                    <td>
+                                        {if $domain.nextduedate  eq '0000/00/00' } {$domain.nextduedate}
+                                        {else}
+                                            {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$domain.nextduedate)}
+                                        {/if}
+                                     </td>
+                                    <td>
+
                                         {if $domain.expirydate  eq '0000/00/00' } {$domain.expirydate} {else}{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$domain.expirydate)}{/if}
 
 
@@ -671,7 +708,12 @@
                                 <tr>
                                     <td><a href="quotes.php?action=manage&id={$quote.id}">{$quote.id}</a></td>
                                     <td style="padding-left:5px;padding-right:5px">{$quote.subject}</td>
-                                    <td>{Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$quote.datecreated)}</td>
+                                    <td>
+                                        {if $quote.datecreated  eq '0000/00/00' } {$quote.datecreated}
+                                        {else}
+                                            {Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$quote.datecreated)}
+                                        {/if}
+                                     </td>
                                     <td>{$quote.total}</td>
                                     <td>{$quote.validuntil}</td>
                                     <td>{$quote.stage}</td>

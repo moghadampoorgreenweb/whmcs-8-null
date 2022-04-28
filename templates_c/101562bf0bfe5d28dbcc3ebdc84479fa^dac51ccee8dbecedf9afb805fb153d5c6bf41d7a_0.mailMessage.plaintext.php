@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2022-04-11 12:30:36
+/* Smarty version 3.1.36, created on 2022-04-25 06:56:49
   from 'mailMessage:plaintext' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_6254034c811422_47208119',
+  'unifunc' => 'content_62662a11cf1913_51259837',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dac51ccee8dbecedf9afb805fb153d5c6bf41d7a' => 
     array (
       0 => 'mailMessage:plaintext',
-      1 => 1649673036,
+      1 => 1650862609,
       2 => 'mailMessage',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6254034c811422_47208119 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62662a11cf1913_51259837 (Smarty_Internal_Template $_smarty_tpl) {
 ?>Thank you for choosing us
 
 Your custom is appreciated

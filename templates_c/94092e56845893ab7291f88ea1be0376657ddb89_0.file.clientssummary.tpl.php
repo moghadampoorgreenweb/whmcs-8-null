@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2022-04-20 13:06:51
+/* Smarty version 3.1.36, created on 2022-04-26 10:14:13
   from 'C:\xampp.7.4\htdocs\whm\admin\templates\blend\clientssummary.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_625fe94b8e25b4_22435112',
+  'unifunc' => 'content_6267a9d5d07965_83528810',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '94092e56845893ab7291f88ea1be0376657ddb89' => 
     array (
       0 => 'C:\\xampp.7.4\\htdocs\\whm\\admin\\templates\\blend\\clientssummary.tpl',
-      1 => 1650081873,
+      1 => 1650960851,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_625fe94b8e25b4_22435112 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6267a9d5d07965_83528810 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp.7.4\\htdocs\\whm\\vendor\\smarty\\smarty\\libs\\plugins\\function.cycle.php','function'=>'smarty_function_cycle',),1=>array('file'=>'C:\\xampp.7.4\\htdocs\\whm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.regex_replace.php','function'=>'smarty_modifier_regex_replace',),2=>array('file'=>'C:\\xampp.7.4\\htdocs\\whm\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 <div id="clientsummarycontainer">
@@ -376,8 +376,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <tr>
                         <td><?php echo $_smarty_tpl->tpl_vars['_ADMINLANG']->value['fields']['signupdate'];?>
 </td>
-                        <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',strtotime($_smarty_tpl->tpl_vars['signupdate']->value));?>
-</td>
+                        <td>
+                            <?php if ($_smarty_tpl->tpl_vars['signupdate']->value == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['signupdate']->value;?>
+
+                            <?php } else { ?>
+                                <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',strtotime($_smarty_tpl->tpl_vars['signupdate']->value));?>
+
+                            <?php }?>
+                          </td>
                     </tr>
                     <tr class="altrow">
                         <td><?php echo $_smarty_tpl->tpl_vars['_ADMINLANG']->value['clientsummary']['clientfor'];?>
@@ -576,8 +582,13 @@ $_smarty_tpl->tpl_vars['email']->do_else = false;
                         <tr class="<?php echo smarty_function_cycle(array('values'=>",altrow"),$_smarty_tpl);?>
 ">
                             <td align="center">
-                                <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['email']->value['date']);?>
- - <a
+                                <?php if ($_smarty_tpl->tpl_vars['email']->value['date'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['email']->value['date'];?>
+
+                                <?php } else { ?>
+                                    <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['email']->value['date']);?>
+
+                                <?php }?>
+                               - <a
                                         href="clientsemails.php?&displaymessage=true&id=<?php echo $_smarty_tpl->tpl_vars['email']->value['id'];?>
 " class="open-modal"
                                         data-modal-title="<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['lang'][0], array( array('key'=>htmlspecialchars('emails.viewemailmessage', ENT_QUOTES, 'UTF-8', true)),$_smarty_tpl ) );?>
@@ -821,10 +832,18 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 </td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['product']->value['dbillingcycle'];?>
 </td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['product']->value['regdate']);?>
-</td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['product']->value['nextduedate']);?>
-</td>
+                                    <td>
+                                        <?php if ($_smarty_tpl->tpl_vars['product']->value['regdate'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['product']->value['regdate'];?>
+
+                                        <?php } else { ?>
+                                            <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['product']->value['regdate']);?>
+
+                                        <?php }?>
+                                       </td>
+                                    <td>
+                                        <?php echo $_smarty_tpl->tpl_vars['product']->value['nextduedate'];?>
+
+                                      </td>
                                     <td class="status"
                                         data-filter-value="<?php echo $_smarty_tpl->tpl_vars['product']->value['domainoriginalstatus'];?>
 "><?php echo $_smarty_tpl->tpl_vars['product']->value['domainstatus'];?>
@@ -910,10 +929,22 @@ $_smarty_tpl->tpl_vars['addon']->do_else = false;
 </td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['addon']->value['dbillingcycle'];?>
 </td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['addon']->value['regdate']);?>
-</td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['addon']->value['nextduedate']);?>
-</td>
+                                    <td>
+                                        <?php if ($_smarty_tpl->tpl_vars['addon']->value['regdate'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['addon']->value['regdate'];?>
+
+                                        <?php } else { ?>
+                                            <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['addon']->value['regdate']);?>
+
+                                        <?php }?>
+                                    </td>
+                                    <td>
+                                        <?php if ($_smarty_tpl->tpl_vars['addon']->value['nextduedate'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['addon']->value['nextduedate'];?>
+
+                                        <?php } else { ?>
+                                            <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['addon']->value['nextduedate']);?>
+
+                                        <?php }?>
+                                       </td>
                                     <td class="status" data-filter-value="<?php echo $_smarty_tpl->tpl_vars['addon']->value['originalstatus'];?>
 "><?php echo $_smarty_tpl->tpl_vars['addon']->value['status'];?>
 </td>
@@ -995,11 +1026,24 @@ $_smarty_tpl->tpl_vars['domain']->do_else = false;
                                     </td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['domain']->value['registrar'];?>
 </td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['domain']->value['registrationdate']);?>
-</td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['domain']->value['nextduedate']);?>
-</td>
                                     <td>
+                                        <?php if ($_smarty_tpl->tpl_vars['domain']->value['registrationdate'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['domain']->value['registrationdate'];?>
+
+                                        <?php } else { ?>
+                                            <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['domain']->value['registrationdate']);?>
+
+                                        <?php }?>
+                                      </td>
+                                    <td>
+                                        <?php if ($_smarty_tpl->tpl_vars['domain']->value['nextduedate'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['domain']->value['nextduedate'];?>
+
+                                        <?php } else { ?>
+                                            <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['domain']->value['nextduedate']);?>
+
+                                        <?php }?>
+                                     </td>
+                                    <td>
+
                                         <?php if ($_smarty_tpl->tpl_vars['domain']->value['expirydate'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['domain']->value['expirydate'];?>
  <?php } else {
 echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['domain']->value['expirydate']);
@@ -1074,8 +1118,14 @@ $_smarty_tpl->tpl_vars['quote']->do_else = false;
 </a></td>
                                     <td style="padding-left:5px;padding-right:5px"><?php echo $_smarty_tpl->tpl_vars['quote']->value['subject'];?>
 </td>
-                                    <td><?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['quote']->value['datecreated']);?>
-</td>
+                                    <td>
+                                        <?php if ($_smarty_tpl->tpl_vars['quote']->value['datecreated'] == '0000/00/00') {?> <?php echo $_smarty_tpl->tpl_vars['quote']->value['datecreated'];?>
+
+                                        <?php } else { ?>
+                                            <?php echo Morilog\Jalali\CalendarUtils::strftime('Y-m-d',$_smarty_tpl->tpl_vars['quote']->value['datecreated']);?>
+
+                                        <?php }?>
+                                     </td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['quote']->value['total'];?>
 </td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['quote']->value['validuntil'];?>
